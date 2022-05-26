@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+//import PDFViewer from 'pdf-viewer-reactjs'
 
 import './App.css'
 
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={submit}>
+      <form encType="multipart/form-data" onSubmit={submit}>
         <input onChange={fileSelected} type="file" accept="image/*"></input>
         <input value={description} onChange={e => setDescription(e.target.value)} type="text"></input>
         <button type="submit">Submit</button>
@@ -43,11 +44,23 @@ function App() {
           <img src={image}></img>
         </div>
       ))}
-
-      <img src="/images/9fa06d3c5da7aec7f932beb5b3e60f1d"></img>
+      
+      
+      <img src={'1653393588184 --- map1.jpg'}></img>
 
     </div>
   );
 }
+// const ExamplePDFViewer = () => {
+//   return (
+//       <PDFViewer
+//           document={{
+//               url: 'https://photos-bucket-demo.s3.ap-south-1.amazonaws.com/1651921339342%20---%20litreviewsample.pdf',
+//           }}
+//       />
+//   )
+// }
+
+
 
 export default App;
